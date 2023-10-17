@@ -1,0 +1,20 @@
+ class Base is
+	method result(a: Integer, b: Integer) : Integer
+           is
+return a.Plus(b)
+end
+	end
+     class Derived extends Base is
+           method result(a: Integer, b: Integer) : Integer
+           is
+                 return a.Minus(b)
+           end
+      end
+      class Test is
+            method Main() is
+                 var a: Base.this()
+                 var b: Derived.this()
+                 a.result(5, 4)
+                 b.result(5, 4)
+            end
+      end

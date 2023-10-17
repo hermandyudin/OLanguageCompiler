@@ -1,0 +1,59 @@
+ProgramContext
+|-ClassDeclarationContext
+| |-ClassTokenContext
+| | |-TerminalNodeImpl: class
+| |-ClassNameContext
+| | |-IdentifierTokenContext
+| | | |-TerminalNodeImpl: Test
+| |-IsTokenContext
+| | |-TerminalNodeImpl: is
+| |-MemberDeclarationContext
+| | |-MethodDeclarationContext
+| | | |-MethodTokenContext
+| | | | |-TerminalNodeImpl: method
+| | | |-IdentifierTokenContext
+| | | | |-TerminalNodeImpl: Main
+| | | |-OpenParenthesisTokenContext
+| | | | |-TerminalNodeImpl: (
+| | | |-CloseParenthesisTokenContext
+| | | | |-TerminalNodeImpl: )
+| | | |-IsTokenContext
+| | | | |-TerminalNodeImpl: is
+| | | |-BodyContext
+| | | | |-VariableDeclarationContext
+| | | | | |-VarTokenContext
+| | | | | | |-TerminalNodeImpl: var
+| | | | | |-IdentifierTokenContext
+| | | | | | |-TerminalNodeImpl: a
+| | | | | |-ColonTokenContext
+| | | | | | |-TerminalNodeImpl: :
+| | | | | |-ExpressionContext
+| | | | | | |-PrimaryContext
+| | | | | | | |-ClassNameContext
+| | | | | | | | |-IdentifierTokenContext
+| | | | | | | | | |-TerminalNodeImpl: Array
+| | | | | | | | |-OpenSquareBracketTokenContext
+| | | | | | | | | |-TerminalNodeImpl: [
+| | | | | | | | |-ClassNameContext
+| | | | | | | | | |-IntegerClassTokenContext
+| | | | | | | | | | |-TerminalNodeImpl: Integer
+| | | | | | | | |-CloseSquareBracketTokenContext
+| | | | | | | | | |-TerminalNodeImpl: ]
+| | | | | | |-DotTokenContext
+| | | | | | | |-TerminalNodeImpl: .
+| | | | | | |-ThisTokenContext
+| | | | | | | |-TerminalNodeImpl: this
+| | | | | | |-ArgumentsContext
+| | | | | | | |-OpenParenthesisTokenContext
+| | | | | | | | |-TerminalNodeImpl: (
+| | | | | | | |-ExpressionContext
+| | | | | | | | |-PrimaryContext
+| | | | | | | | | |-IntegerTokenContext
+| | | | | | | | | | |-TerminalNodeImpl: 15
+| | | | | | | |-CloseParenthesisTokenContext
+| | | | | | | | |-TerminalNodeImpl: )
+| | | |-EndTokenContext
+| | | | |-TerminalNodeImpl: end
+| |-EndTokenContext
+| | |-TerminalNodeImpl: end
+|-TerminalNodeImpl: <EOF>
