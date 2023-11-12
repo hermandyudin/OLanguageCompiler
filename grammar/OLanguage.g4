@@ -4,56 +4,34 @@ grammar OLanguage;
 WS: [ \n\t\r]+ -> skip;
 IdentifierToken : [A-Za-z]+;
 identifierToken : IdentifierToken;
-isToken : 'is';
-endToken : 'end';
-extendsToken : 'extends';
-openSquareBracketToken : '[';
-closeSquareBracketToken : ']';
-varToken : 'var';
-colonToken : ':';
-openParenthesisToken : '(';
-closeParenthesisToken : ')';
 integerClassToken : 'Integer';
 IntegerToken : [0-9]+;
 integerToken : IntegerToken;
-commaToken : ',';
-dotToken : '.';
-thisToken : 'this';
-assignToken : ':=';
-methodToken : 'method';
-returnToken : 'return';
 realClassToken : 'Real';
 RealToken : [0-9]+ '.' [0-9]+;
 realToken: RealToken;
-whileToken : 'while';
-loopToken : 'loop';
 booleanClassToken : 'Boolean';
-ifToken : 'if';
-thenToken : 'then';
-elseToken : 'else';
-trueToken : 'true';
-falseToken : 'false';
-classToken : 'class';
+
 // Parser rules
 program : classDeclaration* EOF;
 
-classDeclaration : classToken className (extendsToken className)? isToken memberDeclaration* endToken;
+classDeclaration : 'class' className ('extends' className)? 'is' memberDeclaration* 'end';
 
-className : (identifierToken | booleanClassToken | realClassToken | integerClassToken) (openSquareBracketToken className closeSquareBracketToken)?;
+className : (identifierToken | booleanClassToken | realClassToken | integerClassToken) ('[' className ']')?;
 
 memberDeclaration : variableDeclaration
                 | methodDeclaration
                 | constructorDeclaration;
 
-variableDeclaration : varToken identifierToken colonToken expression;
+variableDeclaration : 'var' identifierToken ':' expression;
 
-methodDeclaration : methodToken identifierToken openParenthesisToken parameters? closeParenthesisToken (colonToken className)? isToken body endToken;
+methodDeclaration : 'method' identifierToken '(' parameters? ')' (':' className)? 'is' body 'end';
 
-parameters : parameterDeclaration (commaToken parameterDeclaration)*;
+parameters : parameterDeclaration (',' parameterDeclaration)*;
 
-parameterDeclaration : identifierToken colonToken className;
+parameterDeclaration : identifierToken ':' className;
 
-constructorDeclaration : thisToken openParenthesisToken parameters? closeParenthesisToken isToken body endToken;
+constructorDeclaration : 'this' '(' parameters? ')' 'is' body 'end';
 
 body : (variableDeclaration | statement)*;
 
@@ -63,22 +41,22 @@ statement : assignment
           | ifStatement
           | returnStatement;
 
-assignment : identifierToken assignToken expression;
+assignment : identifierToken ':=' expression;
 
-whileLoop : whileToken expression loopToken body endToken;
+whileLoop : 'while' expression 'loop' body 'end';
 
-ifStatement : ifToken expression thenToken body (elseToken body)? endToken;
+ifStatement : 'if' expression 'then' body ('else' body)? 'end';
 
-returnStatement : returnToken expression?;
+returnStatement : 'return' expression?;
 
-expression : primary (dotToken (identifierToken | thisToken) arguments)*;
+expression : primary ('.' (identifierToken | 'this') arguments?)*;
 
-arguments : openParenthesisToken (expression (commaToken expression)*)? closeParenthesisToken;
+arguments : '(' (expression (',' expression)*)? ')';
 
 primary : integerToken
         | realToken
         | booleanLiteral
-        | thisToken
+        | 'this'
         | className;
 
-booleanLiteral : trueToken | falseToken;
+booleanLiteral : 'true' | 'false';

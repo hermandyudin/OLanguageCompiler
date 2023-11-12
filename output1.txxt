@@ -13,17 +13,18 @@ ProgramContext
 | | | |-TerminalNodeImpl: (
 | | | |-TerminalNodeImpl: )
 | | | |-TerminalNodeImpl: is
-| | | |-BodyContext: 
-| | | |-TerminalNodeImpl: end
 | | | |-BodyContext
-| | | | |-VariableDeclarationContext
-| | | | | |-TerminalNodeImpl: var
-| | | | | |-IdentifierTokenContext
-| | | | | | |-TerminalNodeImpl: a
-| | | | | |-TerminalNodeImpl: :
-| | | | | |-ExpressionContext
-| | | | | | |-PrimaryContext
-| | | | | | | |-IntegerTokenContext
-| | | | | | | | |-TerminalNodeImpl: 1
+| | | | |-StatementContext: 
+| | | | |-BodyContext
+| | | | | |-VariableDeclarationContext
+| | | | | | |-TerminalNodeImpl: var
+| | | | | | |-IdentifierTokenContext
+| | | | | | | |-TerminalNodeImpl: a
+| | | | | | |-TerminalNodeImpl: :
+| | | | | | |-ExpressionContext
+| | | | | | | |-PrimaryContext
+| | | | | | | | |-IntegerTokenContext
+| | | | | | | | | |-TerminalNodeImpl: 1
+| | | |-TerminalNodeImpl: end
 | |-TerminalNodeImpl: end
 |-TerminalNodeImpl: <EOF>

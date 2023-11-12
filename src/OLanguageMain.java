@@ -9,23 +9,31 @@ public class OLanguageMain {
     public static PrintWriter writer;
 
     public static void main(String[] args) throws Exception {
-        Scanner scan = new Scanner(System.in);
-        System.out.println("Input file name:");
-        String input = scan.next();
+        try {
+            Scanner scan = new Scanner(System.in);
+            System.out.println("Input file name:");
+            String input = scan.next();
 
-        System.out.println("Output file name:");
-        String output = scan.next();
-        writer = new PrintWriter(new File(output));
+            System.out.println("Output file name:");
+            String output = scan.next();
+            writer = new PrintWriter(new File(output));
 
-        CharStream charStream = CharStreams.fromFileName(input);
-        OLanguageLexer lexer = new OLanguageLexer(charStream);
-        CommonTokenStream tokens = new CommonTokenStream(lexer);
-        OLanguageParser parser = new OLanguageParser(tokens);
+            CharStream charStream = CharStreams.fromFileName(input);
+            OLanguageLexer lexer = new OLanguageLexer(charStream);
+            CommonTokenStream tokens = new CommonTokenStream(lexer);
+            OLanguageParser parser = new OLanguageParser(tokens);
 
-        ParseTree tree = parser.program();
-
-        printTree(tree, 0);
-        writer.close();
+            ParseTree tree = parser.program();
+            MyVisitor visitor = new MyVisitor();
+            visitor.visit(tree);
+            MyListener optimizer = new MyListener();
+            ParseTreeWalker walker = new ParseTreeWalker();
+            walker.walk(optimizer, tree);
+            printTree(tree, 0);
+            writer.close();
+        } catch (SemanticErrorException e) {
+            System.err.println(e.getMessage());
+        }
     }
 
     public static void printTree(ParseTree tree, int indent) {

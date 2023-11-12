@@ -1,268 +1,207 @@
 ProgramContext
 |-ClassDeclarationContext
-| |-ClassTokenContext
-| | |-TerminalNodeImpl: class
+| |-TerminalNodeImpl: class
 | |-ClassNameContext
 | | |-IdentifierTokenContext
 | | | |-TerminalNodeImpl: Base
-| |-IsTokenContext
-| | |-TerminalNodeImpl: is
+| |-TerminalNodeImpl: is
 | |-MemberDeclarationContext
 | | |-MethodDeclarationContext
-| | | |-MethodTokenContext
-| | | | |-TerminalNodeImpl: method
+| | | |-TerminalNodeImpl: method
 | | | |-IdentifierTokenContext
 | | | | |-TerminalNodeImpl: result
-| | | |-OpenParenthesisTokenContext
-| | | | |-TerminalNodeImpl: (
+| | | |-TerminalNodeImpl: (
 | | | |-ParametersContext
 | | | | |-ParameterDeclarationContext
 | | | | | |-IdentifierTokenContext
 | | | | | | |-TerminalNodeImpl: a
-| | | | | |-ColonTokenContext
-| | | | | | |-TerminalNodeImpl: :
+| | | | | |-TerminalNodeImpl: :
 | | | | | |-ClassNameContext
 | | | | | | |-IntegerClassTokenContext
 | | | | | | | |-TerminalNodeImpl: Integer
-| | | | |-CommaTokenContext
-| | | | | |-TerminalNodeImpl: ,
+| | | | |-TerminalNodeImpl: ,
 | | | | |-ParameterDeclarationContext
 | | | | | |-IdentifierTokenContext
 | | | | | | |-TerminalNodeImpl: b
-| | | | | |-ColonTokenContext
-| | | | | | |-TerminalNodeImpl: :
+| | | | | |-TerminalNodeImpl: :
 | | | | | |-ClassNameContext
 | | | | | | |-IntegerClassTokenContext
 | | | | | | | |-TerminalNodeImpl: Integer
-| | | |-CloseParenthesisTokenContext
-| | | | |-TerminalNodeImpl: )
-| | | |-ColonTokenContext
-| | | | |-TerminalNodeImpl: :
+| | | |-TerminalNodeImpl: )
+| | | |-TerminalNodeImpl: :
 | | | |-ClassNameContext
 | | | | |-IntegerClassTokenContext
 | | | | | |-TerminalNodeImpl: Integer
-| | | |-IsTokenContext
-| | | | |-TerminalNodeImpl: is
+| | | |-TerminalNodeImpl: is
 | | | |-BodyContext
 | | | | |-StatementContext
 | | | | | |-ReturnStatementContext
-| | | | | | |-ReturnTokenContext
-| | | | | | | |-TerminalNodeImpl: return
+| | | | | | |-TerminalNodeImpl: return
 | | | | | | |-ExpressionContext
 | | | | | | | |-PrimaryContext
 | | | | | | | | |-ClassNameContext
 | | | | | | | | | |-IdentifierTokenContext
 | | | | | | | | | | |-TerminalNodeImpl: a
-| | | | | | | |-DotTokenContext
-| | | | | | | | |-TerminalNodeImpl: .
+| | | | | | | |-TerminalNodeImpl: .
 | | | | | | | |-IdentifierTokenContext
 | | | | | | | | |-TerminalNodeImpl: Plus
 | | | | | | | |-ArgumentsContext
-| | | | | | | | |-OpenParenthesisTokenContext
-| | | | | | | | | |-TerminalNodeImpl: (
+| | | | | | | | |-TerminalNodeImpl: (
 | | | | | | | | |-ExpressionContext
 | | | | | | | | | |-PrimaryContext
 | | | | | | | | | | |-ClassNameContext
 | | | | | | | | | | | |-IdentifierTokenContext
 | | | | | | | | | | | | |-TerminalNodeImpl: b
-| | | | | | | | |-CloseParenthesisTokenContext
-| | | | | | | | | |-TerminalNodeImpl: )
-| | | |-EndTokenContext
-| | | | |-TerminalNodeImpl: end
-| |-EndTokenContext
-| | |-TerminalNodeImpl: end
+| | | | | | | | |-TerminalNodeImpl: )
+| | | |-TerminalNodeImpl: end
+| |-TerminalNodeImpl: end
 |-ClassDeclarationContext
-| |-ClassTokenContext
-| | |-TerminalNodeImpl: class
+| |-TerminalNodeImpl: class
 | |-ClassNameContext
 | | |-IdentifierTokenContext
 | | | |-TerminalNodeImpl: Derived
-| |-ExtendsTokenContext
-| | |-TerminalNodeImpl: extends
+| |-TerminalNodeImpl: extends
 | |-ClassNameContext
 | | |-IdentifierTokenContext
 | | | |-TerminalNodeImpl: Base
-| |-IsTokenContext
-| | |-TerminalNodeImpl: is
+| |-TerminalNodeImpl: is
 | |-MemberDeclarationContext
 | | |-MethodDeclarationContext
-| | | |-MethodTokenContext
-| | | | |-TerminalNodeImpl: method
+| | | |-TerminalNodeImpl: method
 | | | |-IdentifierTokenContext
 | | | | |-TerminalNodeImpl: result
-| | | |-OpenParenthesisTokenContext
-| | | | |-TerminalNodeImpl: (
+| | | |-TerminalNodeImpl: (
 | | | |-ParametersContext
 | | | | |-ParameterDeclarationContext
 | | | | | |-IdentifierTokenContext
 | | | | | | |-TerminalNodeImpl: a
-| | | | | |-ColonTokenContext
-| | | | | | |-TerminalNodeImpl: :
+| | | | | |-TerminalNodeImpl: :
 | | | | | |-ClassNameContext
 | | | | | | |-IntegerClassTokenContext
 | | | | | | | |-TerminalNodeImpl: Integer
-| | | | |-CommaTokenContext
-| | | | | |-TerminalNodeImpl: ,
+| | | | |-TerminalNodeImpl: ,
 | | | | |-ParameterDeclarationContext
 | | | | | |-IdentifierTokenContext
 | | | | | | |-TerminalNodeImpl: b
-| | | | | |-ColonTokenContext
-| | | | | | |-TerminalNodeImpl: :
+| | | | | |-TerminalNodeImpl: :
 | | | | | |-ClassNameContext
 | | | | | | |-IntegerClassTokenContext
 | | | | | | | |-TerminalNodeImpl: Integer
-| | | |-CloseParenthesisTokenContext
-| | | | |-TerminalNodeImpl: )
-| | | |-ColonTokenContext
-| | | | |-TerminalNodeImpl: :
+| | | |-TerminalNodeImpl: )
+| | | |-TerminalNodeImpl: :
 | | | |-ClassNameContext
 | | | | |-IntegerClassTokenContext
 | | | | | |-TerminalNodeImpl: Integer
-| | | |-IsTokenContext
-| | | | |-TerminalNodeImpl: is
+| | | |-TerminalNodeImpl: is
 | | | |-BodyContext
 | | | | |-StatementContext
 | | | | | |-ReturnStatementContext
-| | | | | | |-ReturnTokenContext
-| | | | | | | |-TerminalNodeImpl: return
+| | | | | | |-TerminalNodeImpl: return
 | | | | | | |-ExpressionContext
 | | | | | | | |-PrimaryContext
 | | | | | | | | |-ClassNameContext
 | | | | | | | | | |-IdentifierTokenContext
 | | | | | | | | | | |-TerminalNodeImpl: a
-| | | | | | | |-DotTokenContext
-| | | | | | | | |-TerminalNodeImpl: .
+| | | | | | | |-TerminalNodeImpl: .
 | | | | | | | |-IdentifierTokenContext
 | | | | | | | | |-TerminalNodeImpl: Minus
 | | | | | | | |-ArgumentsContext
-| | | | | | | | |-OpenParenthesisTokenContext
-| | | | | | | | | |-TerminalNodeImpl: (
+| | | | | | | | |-TerminalNodeImpl: (
 | | | | | | | | |-ExpressionContext
 | | | | | | | | | |-PrimaryContext
 | | | | | | | | | | |-ClassNameContext
 | | | | | | | | | | | |-IdentifierTokenContext
 | | | | | | | | | | | | |-TerminalNodeImpl: b
-| | | | | | | | |-CloseParenthesisTokenContext
-| | | | | | | | | |-TerminalNodeImpl: )
-| | | |-EndTokenContext
-| | | | |-TerminalNodeImpl: end
-| |-EndTokenContext
-| | |-TerminalNodeImpl: end
+| | | | | | | | |-TerminalNodeImpl: )
+| | | |-TerminalNodeImpl: end
+| |-TerminalNodeImpl: end
 |-ClassDeclarationContext
-| |-ClassTokenContext
-| | |-TerminalNodeImpl: class
+| |-TerminalNodeImpl: class
 | |-ClassNameContext
 | | |-IdentifierTokenContext
 | | | |-TerminalNodeImpl: Test
-| |-IsTokenContext
-| | |-TerminalNodeImpl: is
+| |-TerminalNodeImpl: is
 | |-MemberDeclarationContext
 | | |-MethodDeclarationContext
-| | | |-MethodTokenContext
-| | | | |-TerminalNodeImpl: method
+| | | |-TerminalNodeImpl: method
 | | | |-IdentifierTokenContext
 | | | | |-TerminalNodeImpl: Main
-| | | |-OpenParenthesisTokenContext
-| | | | |-TerminalNodeImpl: (
-| | | |-CloseParenthesisTokenContext
-| | | | |-TerminalNodeImpl: )
-| | | |-IsTokenContext
-| | | | |-TerminalNodeImpl: is
+| | | |-TerminalNodeImpl: (
+| | | |-TerminalNodeImpl: )
+| | | |-TerminalNodeImpl: is
 | | | |-BodyContext
 | | | | |-VariableDeclarationContext
-| | | | | |-VarTokenContext
-| | | | | | |-TerminalNodeImpl: var
+| | | | | |-TerminalNodeImpl: var
 | | | | | |-IdentifierTokenContext
 | | | | | | |-TerminalNodeImpl: a
-| | | | | |-ColonTokenContext
-| | | | | | |-TerminalNodeImpl: :
+| | | | | |-TerminalNodeImpl: :
 | | | | | |-ExpressionContext
 | | | | | | |-PrimaryContext
 | | | | | | | |-ClassNameContext
 | | | | | | | | |-IdentifierTokenContext
 | | | | | | | | | |-TerminalNodeImpl: Base
-| | | | | | |-DotTokenContext
-| | | | | | | |-TerminalNodeImpl: .
-| | | | | | |-ThisTokenContext
-| | | | | | | |-TerminalNodeImpl: this
+| | | | | | |-TerminalNodeImpl: .
+| | | | | | |-TerminalNodeImpl: this
 | | | | | | |-ArgumentsContext
-| | | | | | | |-OpenParenthesisTokenContext
-| | | | | | | | |-TerminalNodeImpl: (
-| | | | | | | |-CloseParenthesisTokenContext
-| | | | | | | | |-TerminalNodeImpl: )
+| | | | | | | |-TerminalNodeImpl: (
+| | | | | | | |-TerminalNodeImpl: )
 | | | | |-VariableDeclarationContext
-| | | | | |-VarTokenContext
-| | | | | | |-TerminalNodeImpl: var
+| | | | | |-TerminalNodeImpl: var
 | | | | | |-IdentifierTokenContext
 | | | | | | |-TerminalNodeImpl: b
-| | | | | |-ColonTokenContext
-| | | | | | |-TerminalNodeImpl: :
+| | | | | |-TerminalNodeImpl: :
 | | | | | |-ExpressionContext
 | | | | | | |-PrimaryContext
 | | | | | | | |-ClassNameContext
 | | | | | | | | |-IdentifierTokenContext
 | | | | | | | | | |-TerminalNodeImpl: Derived
-| | | | | | |-DotTokenContext
-| | | | | | | |-TerminalNodeImpl: .
-| | | | | | |-ThisTokenContext
-| | | | | | | |-TerminalNodeImpl: this
+| | | | | | |-TerminalNodeImpl: .
+| | | | | | |-TerminalNodeImpl: this
 | | | | | | |-ArgumentsContext
-| | | | | | | |-OpenParenthesisTokenContext
-| | | | | | | | |-TerminalNodeImpl: (
-| | | | | | | |-CloseParenthesisTokenContext
-| | | | | | | | |-TerminalNodeImpl: )
+| | | | | | | |-TerminalNodeImpl: (
+| | | | | | | |-TerminalNodeImpl: )
 | | | | |-StatementContext
 | | | | | |-ExpressionContext
 | | | | | | |-PrimaryContext
 | | | | | | | |-ClassNameContext
 | | | | | | | | |-IdentifierTokenContext
 | | | | | | | | | |-TerminalNodeImpl: a
-| | | | | | |-DotTokenContext
-| | | | | | | |-TerminalNodeImpl: .
+| | | | | | |-TerminalNodeImpl: .
 | | | | | | |-IdentifierTokenContext
 | | | | | | | |-TerminalNodeImpl: result
 | | | | | | |-ArgumentsContext
-| | | | | | | |-OpenParenthesisTokenContext
-| | | | | | | | |-TerminalNodeImpl: (
+| | | | | | | |-TerminalNodeImpl: (
 | | | | | | | |-ExpressionContext
 | | | | | | | | |-PrimaryContext
 | | | | | | | | | |-IntegerTokenContext
 | | | | | | | | | | |-TerminalNodeImpl: 5
-| | | | | | | |-CommaTokenContext
-| | | | | | | | |-TerminalNodeImpl: ,
+| | | | | | | |-TerminalNodeImpl: ,
 | | | | | | | |-ExpressionContext
 | | | | | | | | |-PrimaryContext
 | | | | | | | | | |-IntegerTokenContext
 | | | | | | | | | | |-TerminalNodeImpl: 4
-| | | | | | | |-CloseParenthesisTokenContext
-| | | | | | | | |-TerminalNodeImpl: )
+| | | | | | | |-TerminalNodeImpl: )
 | | | | |-StatementContext
 | | | | | |-ExpressionContext
 | | | | | | |-PrimaryContext
 | | | | | | | |-ClassNameContext
 | | | | | | | | |-IdentifierTokenContext
 | | | | | | | | | |-TerminalNodeImpl: b
-| | | | | | |-DotTokenContext
-| | | | | | | |-TerminalNodeImpl: .
+| | | | | | |-TerminalNodeImpl: .
 | | | | | | |-IdentifierTokenContext
 | | | | | | | |-TerminalNodeImpl: result
 | | | | | | |-ArgumentsContext
-| | | | | | | |-OpenParenthesisTokenContext
-| | | | | | | | |-TerminalNodeImpl: (
+| | | | | | | |-TerminalNodeImpl: (
 | | | | | | | |-ExpressionContext
 | | | | | | | | |-PrimaryContext
 | | | | | | | | | |-IntegerTokenContext
 | | | | | | | | | | |-TerminalNodeImpl: 5
-| | | | | | | |-CommaTokenContext
-| | | | | | | | |-TerminalNodeImpl: ,
+| | | | | | | |-TerminalNodeImpl: ,
 | | | | | | | |-ExpressionContext
 | | | | | | | | |-PrimaryContext
 | | | | | | | | | |-IntegerTokenContext
 | | | | | | | | | | |-TerminalNodeImpl: 4
-| | | | | | | |-CloseParenthesisTokenContext
-| | | | | | | | |-TerminalNodeImpl: )
-| | | |-EndTokenContext
-| | | | |-TerminalNodeImpl: end
-| |-EndTokenContext
-| | |-TerminalNodeImpl: end
+| | | | | | | |-TerminalNodeImpl: )
+| | | |-TerminalNodeImpl: end
+| |-TerminalNodeImpl: end
 |-TerminalNodeImpl: <EOF>

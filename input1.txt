@@ -1,6 +1,7 @@
- class Test is
-           method Main() is
-                var a : Array[Integer].this(15)
-
-                end
-           end
+class Test is
+    method ha() is
+        if true then
+            var a : 1
+        end
+    end
+end

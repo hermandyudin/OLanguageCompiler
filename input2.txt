@@ -1,5 +1,5 @@
 class Finder is
-	method find(arr: Array[Integer], num: Integer) : Boolean
+	method find(arr: Array[Integer], num: Integer) : Integer
            is
 var l : 0
 var r : arr.Size().Minus(1)

@@ -1,0 +1,17 @@
+ProgramContext
+|-ClassDeclarationContext
+| |-TerminalNodeImpl: class
+| |-ClassNameContext
+| | |-IdentifierTokenContext
+| | | |-TerminalNodeImpl: Test
+| |-TerminalNodeImpl: is
+| |-ErrorNodeImpl: if
+| |-ErrorNodeImpl: true
+| |-ErrorNodeImpl: then
+| |-ErrorNodeImpl: var
+| |-ErrorNodeImpl: a
+| |-ErrorNodeImpl: :
+| |-ErrorNodeImpl: 1
+| |-ErrorNodeImpl: end
+| |-ErrorNodeImpl: end
+|-TerminalNodeImpl: <EOF>
