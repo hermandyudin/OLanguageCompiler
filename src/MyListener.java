@@ -1,10 +1,19 @@
 import org.antlr.v4.runtime.tree.TerminalNode;
+import org.antlr.v4.runtime.*;
+import org.antlr.v4.runtime.tree.*;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Set;
 
+
 public class MyListener extends OLanguageBaseListener {
-    private Set<String> usedVariables = new HashSet<>();
+    public MyListener(HashMap<Integer, ArrayList<String>> unusedVariables) {
+        this.unusedVariables = unusedVariables;
+    }
+    private Integer scopeNumber = 0;
+    private HashMap<Integer, ArrayList<String>> unusedVariables;
 
     @Override
     public void enterIfStatement(OLanguageParser.IfStatementContext ctx) {
@@ -19,40 +28,43 @@ public class MyListener extends OLanguageBaseListener {
         }
     }
 
-//    @Override
-//    public void enterVariableDeclaration(OLanguageParser.VariableDeclarationContext ctx) {
-//        // Mark the variable as used
-//        usedVariables.add(ctx.identifierToken().getText());
-//    }
-//
-//    @Override
-//    public void enterAssignment(OLanguageParser.AssignmentContext ctx) {
-//        // Mark the variable in assignment as used
-//        usedVariables.add(ctx.identifierToken().getText());
-//    }
-//
-//    @Override
-//    public void exitProgram(OLanguageParser.ProgramContext ctx) {
-//        // Remove unused variables from the AST
-//        removeUnusedVariables();
-//    }
-//
-//    private void removeUnusedVariables() {
-//        // Remove variable declarations and assignments for unused variables
-//        if (node instanceof OLanguageParser.VariableDeclarationContext ||
-//                node instanceof OLanguageParser.AssignmentContext) {
-//            String variableName = getVariableName(node);
-//            if (!usedVariables.contains(variableName)) {
-//                // Remove the node (variable declaration or assignment)
-//                node.getParent().removeLastChild();
-//            }
-//        }
-//
-//        // Recursively remove unused variables in children
-//        for (int i = 0; i < node.getChildCount(); i++) {
-//            removeUnusedVariables(node.getChild(i));
-//        }
-//    }
+    @Override
+    public void enterBody(OLanguageParser.BodyContext ctx) {
+        for (OLanguageParser.VariableDeclarationContext variableDeclarationContext : ctx.variableDeclaration()) {
+            if (unusedVariables.get(scopeNumber) != null) {
+                if (unusedVariables.get(scopeNumber).contains(variableDeclarationContext.identifierToken().getText())) {
+                    System.out.println("Optimization: Unused variable " + variableDeclarationContext.identifierToken().getText() + " in scope " + scopeNumber + " deleted.");
+                    ctx.children.remove(ctx.children.indexOf(variableDeclarationContext));
+                }
+            }
+        }
+    }
+
+    @Override
+    public void enterVariableDeclaration(OLanguageParser.VariableDeclarationContext ctx) {
+    }
 
 
+    @Override
+    public void enterAssignment(OLanguageParser.AssignmentContext ctx) {
+    }
+
+    @Override
+    public void enterClassDeclaration(OLanguageParser.ClassDeclarationContext ctx) {
+        scopeNumber += 1;
+    }
+
+    public void enterMethodDeclaration(OLanguageParser.MethodDeclarationContext ctx) {
+        scopeNumber += 1;
+    }
+
+    @Override
+    public void enterWhileLoop(OLanguageParser.WhileLoopContext ctx) {
+        scopeNumber += 1;
+    }
+
+    @Override
+    public void exitClassDeclaration(OLanguageParser.ClassDeclarationContext ctx) {
+
+    }
 }

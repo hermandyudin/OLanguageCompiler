@@ -18,27 +18,15 @@ class Derived extends Base is
     method res(a: Integer, b: Integer) : Integer is
         return a.Minus(b)
     end
+end
 
+class DerivedNew extends Derived is
 end
 
 class Test is
     method main() is
          var a: Base.this()
          var b: Derived.this()
-         a := b
-         var c: 5
-         var ans : 0
-         c := a.result(5, 7)
-         ans := ans.PrintResult(c)
-         c := b.res(6, 5)
-         ans := ans.PrintResult(c)]
-         c := b.result(6, 5)
-         ans := ans.PrintResult(c)
-         if c.Less(0) then
-         c := 0
-         else
-         c := 1
-         end
-         ans := ans.PrintResult(c)
+         var c : DerivedNew.this()
     end
 end

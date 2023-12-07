@@ -1,0 +1,127 @@
+.class public Integer
+.super lang\java\Object
+
+.field private value I
+.field private Max I
+.field private Min I
+
+.method public <init>(I)V
+
+   aload 0
+   invokespecial java/lang/Object/<init>()V
+   aload 0
+   iload 1
+   putfield Integer/value I
+   return
+
+.end method
+
+.method public Plus(I)I
+   aload 0
+   getfield Integer/value I
+   iload 1
+   iadd
+   ireturn
+
+.end method
+
+.method public Minus(I)I
+   aload 0
+   getfield Integer/value I
+   iload 1
+   isub
+   ireturn
+
+.end method
+.class public Base
+.super java/lang/Object
+
+.method public <init>()V
+aload 0
+invokenonvirtual java/lang/Object/<init>()V
+return
+.end method
+
+.method public result(LInteger;LInteger;)LInteger;
+
+invokevirtual Integer/Plus(LInteger;)LReal;
+areturn
+.end method
+
+.class public Derived
+.super Base
+
+.field private c LInteger;
+.method public <init>(LInteger;)V
+aload 0
+invokenonvirtual Base/<init>()V
+aload 0
+aload 1
+putfield Derived/c LInteger
+return
+.end method
+
+.method public res(LInteger;LInteger;)LInteger;
+
+invokevirtual Integer/Minus(LInteger;)LReal;
+areturn
+.end method
+
+.class public Test
+.super java/lang/Object
+
+.method public <init>()V
+aload 0
+invokenonvirtual java/lang/Object/<init>()V
+return
+.end method
+
+.field private c LInteger;
+.method public Main()V
+
+new Base
+dup
+invokespecial Base/<init>()V
+astore 1
+
+new Derived
+dup
+invokespecial Derived/<init>()V
+astore 2
+
+new Integer
+dup
+astore 3
+
+.getfield Test/c Integer
+invokevirtual Integer/Less(LInteger;)LBoolean;
+ifeq ElseLabel0
+new Derived
+dup
+aload 2
+astore 4
+
+aload 4
+aload 3
+aload 3
+invokevirtual Derived/res(LInteger;LInteger;)LInteger;
+astore 4
+goto EndLabel1
+ElseLabel0:
+new Base
+dup
+aload 1
+astore 5
+
+aload 5
+aload 3
+aload 3
+invokevirtual Base/result(LInteger;LInteger;)LInteger;
+astore 5
+EndLabel1:
+aload 3
+putfield Test/c LInteger;
+return
+.end method
+
+

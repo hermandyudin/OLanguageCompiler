@@ -1,7 +1,10 @@
-class Test is
-    method ha() is
-        if true then
-            var a : 1
-        end
+class Test[T,K] is
+    var a : 10
+    var c : true
+    method ha(param1: K, param2: T) is
+        var b : c
+        var k : 4
+        k := a.Plus(k.Plus(true))
     end
 end
+

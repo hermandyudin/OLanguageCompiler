@@ -1,0 +1,11 @@
+.class public Integer
+.super java/lang/Object
+
+.field private value I
+.field private Max I
+.field private Min I
+
+.method public Main()V
+   return
+
+.end method
